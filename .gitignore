@@ -1,0 +1,6 @@
+# Ignore Everything
+/*
+
+# Whitelist
+!.gitignore
+!.spacemacs
