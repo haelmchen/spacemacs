@@ -124,8 +124,6 @@
         virtualenvwrapper
         ;; Additional ligature replacements for eg. greeks
         pretty-mode
-        ;; Spotify layer improvements behind SPC a m s prefix
-        helm-spotify-plus
         ;; Doom theme
         doom-themes
         ;; All-the-icons integration with mode line
@@ -777,7 +775,6 @@
 
 ;;; Misc
 (defun dotspacemacs/user-config/misc ()
-  (when-linux-call 'dotspacemacs/user-config/misc/spotify)
   (dotspacemacs/user-config/misc/aspell)
   (dotspacemacs/user-config/misc/auto-completion)
   ;; (dotspacemacs/user-config/misc/lisp-state)
@@ -786,14 +783,6 @@
   (dotspacemacs/user-config/misc/projectile)
   (dotspacemacs/user-config/misc/shell)
   (dotspacemacs/user-config/misc/yassnippet))
-
-;;;; Spotify
-(defun dotspacemacs/user-config/misc/spotify ()
-  (global-set-key (kbd "C-c s s") 'helm-spotify-plus)
-  (global-set-key (kbd "C-c s n") 'helm-spotify-plus-next)
-  (global-set-key (kbd "C-c s N") 'helm-spotify-plus-previous)
-  (global-set-key (kbd "C-c s f") 'helm-spotify-plus-play)
-  (global-set-key (kbd "C-c s F") 'helm-spotify-plus-pause))
 
 ;;;; Aspell
 (defun dotspacemacs/user-config/misc/aspell ()
