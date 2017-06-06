@@ -410,7 +410,7 @@
        (set-display-table-slot
         display-table 4
         (vconcat
-         (mapcar (lambda (c) (make-glyph-code c 'font-lock-keyword-face)) "▼")))))))
+         (mapcar (lambda (c) (make-glyph-code c 'font-lock-keyword-face)) " ▼")))))))
 
 ;;;; Pretty-magit
 (defun dotspacemacs/user-config/display/prettify-magit ()
