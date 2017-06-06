@@ -229,7 +229,9 @@
   (load (if-linux "~/elisp/.custom-settings.el"
                   "c:/~/elisp/.custom-settings.el"))
   (load (if-linux "~/elisp/prettify-utils.el"
-                  "c:/~/elisp/prettify-utils.el")))
+                  "c:/~/elisp/prettify-utils.el"))
+  ;; Fix startup error caused by .bashrc or .zshrc
+  (setq exec-path-from-shell-arguments '("-l")))
 
 ;;; Spacemacs-User-config
 (defun dotspacemacs/user-config ()
