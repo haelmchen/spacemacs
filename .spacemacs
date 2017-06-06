@@ -243,7 +243,6 @@
     ;; Rest
     (dotspacemacs/user-config/configuration)
     (dotspacemacs/user-config/ivy)
-    (dotspacemacs/user-config/gnus)
     (dotspacemacs/user-config/misc)
     (dotspacemacs/user-config/navigation)
     (dotspacemacs/user-config/latex)
@@ -1236,49 +1235,3 @@
   (add-hook 'outline-minor-mode-hook 'outshine-hook-function)
   ;; Enables outline-minor-mode for *ALL* programming buffers!
   (add-hook 'prog-mode-hook 'outline-minor-mode))
-
-;;; GNUs
-(defun dotspacemacs/user-config/gnus ()
-  (setq user-mail-address	"psyschomann@gmail.com"
-        user-full-name	"Mario Knies"
-
-        ;; Get mail
-        gnus-secondary-select-methods
-        '((nnimap "gmail"
-                  (nnimap-address "imap.gmail.com")
-                  (nnimap-server-port 993)
-                  (nnimap-stream ssl))
-          (nntp "gmane"
-                (nntp-address "news.gmane.org"))
-          (nntp "news.gwene.org"))
-
-        ;; Send mail
-        message-send-mail-function 'smtpmail-send-it
-
-        ;; Archive outgoing email in Sent folder on imap.gmail.com
-        gnus-message-archive-method '(nnimap "imap.gmail.com")
-        gnus-message-archive-group "[Gmail]/Sent Mail"
-
-        ;; Auth
-        smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-        smtpmail-auth-credentials '(("smtp.gmail.com" 587
-                                     "psyschomann@gmail.com" nil))
-
-        ;; SMPT Server config
-        smtpmail-default-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-service 587
-
-        ;; set return email address based on incoming email address
-        gnus-posting-styles
-        '(((header "to" "address@outlook.com")
-           (address  "address@outlook.com"))
-          ((header "to" "address@gmail.com")
-           (address "address@gmail.com")))
-
-        ;; store email in ~/gmail directory
-        nnml-directory "~/gmail"
-        message-directory "~/gmail"
-
-        ;; Full size images
-        mm-inline-large-images 'resize))
