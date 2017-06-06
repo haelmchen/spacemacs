@@ -57,7 +57,6 @@
 (setq dotspacemacs/layers/core
       '(better-defaults
         git
-        gnus
         (org :variables
              org-enable-reveal-js-support t)
         bibtex
