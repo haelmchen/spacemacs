@@ -252,7 +252,7 @@
 ;;; Display
 (defun dotspacemacs/user-config/display ()
   ;; Group 1
-  (unless-linux-call 'dotspacemacs/user-config/display/windows-frame-size-fix)
+  ;; (unless-linux-call 'dotspacemacs/user-config/display/windows-frame-size-fix)
 
   ;; Group 2
   (dotspacemacs/user-config/display/init-doom-theme)
